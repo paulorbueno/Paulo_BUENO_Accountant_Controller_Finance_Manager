@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paulo Roberto BUENO | Corporate Accounting Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        /* Estilos padrão (já existentes) */
+        :root {
+            --primary-color: #00b8ff;
+            --secondary-color: #0077ff;
+            --background: #3c3c47;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-color: #ffffff;
+            --text-light: rgba(255, 255, 255, 0.7);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --border-radius: 16px;
+            --neon-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+        }
+        [data-theme="light"] {
+            --background: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-light: #555555;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 100px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            animation: float 3s ease-in-out infinite;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+            color: var(--text-light);
+            animation: float 3.5s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .container {
+            max-width: 1200px;
+            margin: -80px auto 40px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--neon-shadow);
+        }
+        .profile-img {
+            max-width: 350px;
+            border-radius: 50%;
+            margin: -75px auto 20px;
+            display: block;
+            border: 4px solid var(--primary-color);
+            box-shadow: var(--neon-shadow);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); }
+            100% { box-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color); }
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: var(--text-color);
+            position: relative;
+            display: inline-block;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+        p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        ul li:hover {
+            transform: translateX(10px);
+        }
+        ul li i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--neon-shadow);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--card-bg);
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        .theme-toggle i {
+            color: var(--text-color);
+            font-size: 1.2rem;
+        }
+
+        /* Botão de impressão */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 70px; /* Ajuste para ficar ao lado do botão de tema */
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .print-button:hover {
+            transform: scale(1.1);
+        }
+        .print-button i {
+            color: var(--text-color);
+            font-size: 1.2rem;
+        }
+
+        /* Botão de alternância de idiomas */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 120px; /* Ajuste para ficar ao lado do botão de impressão */
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        .language-toggle:hover {
+            transform: scale(1.1);
+        }
+        .language-toggle i {
+            color: var(--text-color);
+            font-size: 1.2rem;
+        }
+
+        /* Nome no início (visível apenas na impressão) */
+        .print-name {
+            display: none; /* Oculta na versão web */
+        }
+
+        /* Estilos específicos para impressão */
+        @media print {
+            body {
+                background-color: white !important;
+                color: black !important;
+                font-family: Arial, sans-serif;
+                line-height: 1.4; /* Espaçamento entre linhas reduzido */
+            }
+            header, .theme-toggle, .print-button, .language-toggle, footer, .social-links, .cta-button, .profile-img, .card:hover, #particles-js {
+                display: none; /* Remove elementos desnecessários */
+            }
+            .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+            }
+            .card {
+                background: white !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 10px !important;
+                margin-bottom: 15px !important; /* Espaçamento reduzido */
+            }
+            h2 {
+                color: black !important;
+                font-size: 1.5rem !important;
+                margin-bottom: 10px !important;
+            }
+            h2::after {
+                background: black !important; /* Linha preta para impressão */
+            }
+            ul li {
+                background: white !important;
+                color: black !important;
+                padding: 8px !important;
+                margin: 5px 0 !important; /* Espaçamento reduzido */
+            }
+            ul li i {
+                color: black !important;
+            }
+            .highlight {
+                color: black !important;
+            }
+            /* Nome no início (visível apenas na impressão) */
+            .print-name {
+                display: block;
+                font-size: 2rem;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body data-theme="dark">
+
+    <div id="particles-js"></div>
+
+    <!-- Botão de alternância de tema -->
+    <div class="theme-toggle" id="theme-toggle">
+        <i class='bx bx-sun'></i>
+    </div>
+
+    <!-- Botão de impressão -->
+    <button class="print-button" onclick="window.print()">
+        <i class='bx bx-printer'></i>
+    </button>
+
+    <!-- Botão de alternância de idiomas
+    <div class="language-toggle" id="language-toggle">
+        <i class='bx bx-globe'></i>
+    </div> -->
+
+    <header>
+        <h1>Paulo Roberto BUENO</h1>
+        <p>Accountant | Controller | Finance Manager</p>
+    </header>
+
+    <div class="container">
+        <!-- Nome no início (visível apenas na impressão) -->
+        <div class="print-name">Paulo Roberto BUENO</div>
+
+        <div class="card">
+            <img src="PRB_Finance.JPG" alt="Paulo Roberto BUENO" class="profile-img">
+            <h2>About Me</h2>
+            <p>Hello! I am <span class="highlight">Paulo Roberto BUENO</span>, an Accountant & Finance professional with over 20 years of experience in accounting, finance, management and business analysis, with a solid practical experience in challenging corporations, IFRS, LUX GAAP, NAV Calculation, VAT, Tax reporting, Audit, GDPR, Financial regulations, Cost optmisation, Reporting, Data analysis, Financial management, Performance enhancement, great problem-solving skills and strategic vision, prepared to bring value in new challenges, combining technical abilities with leadership and result-oriented focus. 
+                Proven track of reducing costs by 40% while increasing production by 120% and implementing transformative financial processes. As Controller in Luxembourg reorganized and updated accounting processes of a Real Estate Company as well as improved internal controls and bank reconciliation. As Finance Manager, has implemented significative improvements in Company’s Finance management, cash flow control e accounts publication. 
+                Throughout the professional path was responsible for reversing a shutdown order for a company that was facing serious tax, accounting and environmental challenges, bringing it into environmental and tax compliance, as well as collaborating on the implementation of an integrated sales and billing control system, which brought greater consistency and security to tax returns. 
+                With a strategic approach, worked in partnership with lawyers to mitigate labour liabilities and with engineers to increase the company's production during an energy crisis in Brazil, taking advantage of the gap left by the competition. Has also played a key role in the process of selling and transferring the business to new owners.
+                After fully transferring the business to its new owners, started working with an accounting firm founded by former colleagues, where defined processes, implemented an accounting system and has played a significant role in the business’ growth, always keeping up to date with studies in the relevant working areas, a habit that continues to be cultivated today, aiming as much as possible to  integrate best practices and innovative solutions into the day-to-day running of the companies.
+                Afterwards, as Business Analyst, led important projects such as reducing unnecessary customisations in the ERP HIS/LIS system and carrying out GAP Analysis in international markets, including the UK and Germany. Has once again  optimised processes, managing and implementing projects, analysing and helping to have bugs corrected and conducting training on the healthcare ERP with a practical, direct and customer-oriented approach towards problem-solving and results maximization.
+                Having changed jobs, yet as a Business Analyst, to a position at APAE-SP, was responsible for optimising processes, managing and implementing projects, correcting issues and conducting training on the same healthcare ERP, although from a client-perspective. 
+                After moving to Luxembourg has kept the same usual pace and upon receiving and accepting another job offer, has worked for two months in both companies in order to allow a smooth transition in the handover of the former, while at the same time being able to start the new challenge earlier.
+                Excellent skills in customer service, effective communication, multitasking, adaptability, resilience, time management, strong organizational and analytical skills.
+                </p>
+        </div>
+
+        <div class="card">
+            <h2>Personal Information</h2>
+            <ul>
+                <li><i class='bx bx-globe'></i>Luxembourgish</li>
+                <li><i class='bx bx-map'></i>Lives in Bertrange, Luxembourg</li>
+                <li><i class='bx bx-car'></i>Driving license AB</li>
+                <li><i class='bx bx-phone'></i>+352 661 375 189</li>
+                <li><i class='bx bx-envelope'></i><a href="mailto:paulrbueno@gmail.com">paulrbueno@gmail.com</a></li>
+                <li><i class='bx bx-link'></i><a href="https://www.linkedin.com/in/prbueno/" target="_blank">https://www.linkedin.com/in/prbueno/</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Skills and Competencies</h2>
+            <ul>
+                <li><i class='bx bx-check'></i>Organized & Communicative</li>
+                <li><i class='bx bx-check'></i>Problem-solving & Proactive</li>
+                <li><i class='bx bx-check'></i>Attentive to details, Committed & Loyal</li>
+                <li><i class='bx bx-check'></i>IFRS, LUX GAAP, Audit, General Ledger</li>
+                <li><i class='bx bx-check'></i>Accounting, AP/AR, Bank reconciliation</li>
+                <li><i class='bx bx-check'></i>Payroll accounting inputs</li>
+                <li><i class='bx bx-check'></i>Good skills in MS Office suite</li>
+                <li><i class='bx bx-check'></i>Experience in Sage Intacct, BOB50 and Tasy</li>
+                <li><i class='bx bx-check'></i>Mac and Windows proficient user</li>
+                <li><i class='bx bx-check'></i>SAFe, Agile, Lean, Storytelling</li>
+                <li><i class='bx bx-check'></i>BOB50, Intacct, Pages, Numbers, Keynotes</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Education</h2>
+            <p><strong>Bachelor in Accounting</strong> | Catholic University of Santos | 1995 - 2003 | (Luxembourg EQF Level 6)</p>
+        </div>
+
+        <div class="card">
+            <h2>Training & Certifications</h2>
+            <ul>
+                <li><i class='bx bx-certification'></i>Data Analyst – CNFPC – Luxembourg – 01/25-05/25</li>
+                <li><i class='bx bx-certification'></i>Fund Accounting – LLLC – Luxembourg – 09/24-01/25</li>
+                <li><i class='bx bx-certification'></i>VAT – LLLC – Luxembourg – 02/24-05/24</li>
+                <li><i class='bx bx-certification'></i>BOB50 – LLLC – Luxembourg – 08/22-02/23</li>
+                <li><i class='bx bx-certification'></i>Luxembourgish – INL – Luxembourg – 08/20-06/22</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Languages</h2>
+            <ul>
+                <li><i class='bx bx-globe'></i>Portuguese - Native (C2)</li>
+                <li><i class='bx bx-globe'></i>English - Fluent (C1)</li>
+                <li><i class='bx bx-globe'></i>Luxembourgish - Independent (B1)</li>
+                <li><i class='bx bx-globe'></i>French - Beginner (A2)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Professional Experience</h2>
+            <p><strong>Finance Manager</strong> | SHIPSTA S.à.r.l. | IT - SaaS - Procurement operations | Mertert-Luxembourg | 06/2023 - 11/2023</p>
+            <ul>
+                <li><i class='bx bx-task'></i>Enhanced company liquidity & financial planning by streamlining administrative procedures.</li>
+                <li><i class='bx bx-task'></i>Produced accurate financial statements ensuring corporate compliance and governance.</li>
+                <li><i class='bx bx-task'></i>Provided strategic financial insights to C-level directors helping them on financing definitions.</li>
+                <li><i class='bx bx-task'></i>Implemented process improvements to optimize financial operations time management and documentation.</li>
+            </ul>
+            <p><strong>Controller/Internal Accountant</strong> | Arca Properties | Real Estate - Short-term accommodation | Luxembourg-Luxembourg | 12/2021 - 07/2023</p>
+            <ul>
+                <li><i class='bx bx-task'></i>Conducted comprehensive financial analysis to identify cost-saving opportunities and budgeting enhancements & management.</li>
+                <li><i class='bx bx-task'></i>Oversaw the preparation of monthly/annual financial statements, VAT and tax returns.</li>
+                <li><i class='bx bx-task'></i>Streamlined financial processes, improving efficiency, accuracy, cash flow and expenses management.</li>
+                <li><i class='bx bx-task'></i>Managed end-to-end accounting processes including invoicing and accruals, reducing error risks.</li>
+                <li><i class='bx bx-task'></i>Helped C-level in HR-related processes & procedures.</li>
+            </ul>
+            <p><strong>Business Analyst</strong> | APAE-SP | Healthcare Facilities and Laboratory | São Paulo-Brazil | 01/2017 - 05/2020</p>
+            <ul>
+                <li><i class='bx bx-task'></i>Responsible for the implementation and optimization of the ERP system.</li>
+                <li><i class='bx bx-task'></i>Improved ERP usage through client training.</li>
+                <li><i class='bx bx-task'></i>Streamlined administrative processes through system automation.</li>
+                <li><i class='bx bx-task'></i>Increased operational efficiency through technological solutions.</li>
+            </ul>
+            <p><strong>Business Analyst</strong> | Philips Clinical Informatics | IT - ERP Healthcare systems - HIS/LIS | Blumenau-Brazil | 09/2011 - 03/2016</p>
+            <ul>
+                <li><i class='bx bx-task'></i>Conducted gap analysis for international prospects (UK and Germany).</li>
+                <li><i class='bx bx-task'></i>Led system stabilisation projects and optimisation.</li>
+                <li><i class='bx bx-task'></i>Improved ERP usage and client satisfaction.</li>
+                <li><i class='bx bx-task'></i>Implemented software solutions with user training.</li>
+                <li><i class='bx bx-task'></i>Responsible for an internal project to avoid unnecessary system customisations.</li>
+            </ul>
+            <p><strong>Accountant</strong> | Econex Contadores | Accounting Office | Santos-Brazil | 01/2009 - 08/2011</p>
+            <ul>
+                <li><i class='bx bx-task'></i>Managed office operations and client reporting.</li>
+                <li><i class='bx bx-task'></i>Handled comprehensive accounting tasks: AP/AR, payments, bank reconciliation.</li>
+                <li><i class='bx bx-task'></i>Assisted in preparation of annual financial statements and reports.</li>
+                <li><i class='bx bx-task'></i>Provided client orientation and support helping them regarding their companies’ economics and business administration & development.</li>
+            </ul>
+            <p><strong>Accountant & Branch Manager</strong> | O.Ribeiro S.A. | Mining Company | São Vicente-Brazil | 08/1991 - 12/2008</p>
+            <ul>
+                <li><i class='bx bx-task'></i>Achieved 120% production increase and 40% operational cost reduction.</li>
+                <li><i class='bx bx-task'></i>Led environmental compliance and renewal campaign.</li>
+                <li><i class='bx bx-task'></i>Prevented potential legal issues through proactive tax and labor management.</li>
+                <li><i class='bx bx-task'></i>Conducted market studies prior to enhancing production.</li>
+                <li><i class='bx bx-task'></i>Automated and increased business performance processes to enhance operational efficiency.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Paulo Roberto BUENO. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Função para alternar entre Dark Mode e Light Mode
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.dataset.theme = body.dataset.theme === 'light' ? 'dark' : 'light';
+            themeToggle.innerHTML = body.dataset.theme === 'light' ? '<i class="bx bx-moon"></i>' : '<i class="bx bx-sun"></i>';
+        });
+
+        // Configuração do Particles.js
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles.js config loaded!');
+        });
+    </script>
+</body>
+</html>
